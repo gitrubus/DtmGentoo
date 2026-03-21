@@ -89,14 +89,10 @@ if [[ "$_auto_mode" == "false" ]]; then
     fi
 fi
 
-# --- Detect AUR Helper ---
+# --- Detect uses emerge Helper ---
 AUR_HELPER=""
-if command -v paru &>/dev/null; then
-    AUR_HELPER="paru"
-elif command -v yay &>/dev/null; then
-    AUR_HELPER="yay"
-else
-    log_error "Neither 'paru' nor 'yay' found. Please install an AUR helper."
+if command -v emerge &>/dev/null; then
+    AUR_HELPER="emerge"
 fi
 readonly AUR_HELPER
 
@@ -108,7 +104,7 @@ log_info "Phase 1: Package Management..."
 # Ensure jq is installed (vital for JSON editing in Phase 4)
 if ! command -v jq &>/dev/null; then
     log_info "Installing dependency: jq..."
-    sudo pacman -S --needed --noconfirm jq
+    sudo emerge --ask -q jq
 fi
 
 # Warn early if matugen is missing (config is written regardless)
