@@ -1,5 +1,5 @@
 ## If you need help with installation or troubleshooting, join the Discord server.
-
+## this fork of duskylinux is not tested yet if you have any issues please post the issues in the issues tab.
 
 [Join Discord Server][discord]
 
