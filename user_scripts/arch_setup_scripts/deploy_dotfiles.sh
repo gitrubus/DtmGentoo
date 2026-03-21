@@ -67,7 +67,7 @@ main() {
 
     # 1. Pre-flight Checks
     if ! command -v git &> /dev/null; then
-        log_error "Git is not installed. Please run 'pacman -S git' first."
+        log_error "Git is not installed. Please run 'emerge --ask git' first. it may take a while you know."
         exit 1
     fi
 
