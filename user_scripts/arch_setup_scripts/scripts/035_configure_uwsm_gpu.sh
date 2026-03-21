@@ -95,7 +95,7 @@ install_packages() {
     (( ${#packages[@]} > 0 )) || return 0
 
     if (( EUID == 0 )); then
-        pacman -S --needed --noconfirm "${packages[@]}"
+        emerge --ask "${packages[@]}"
         return
     fi
 
@@ -104,7 +104,7 @@ install_packages() {
         return 1
     fi
 
-    sudo pacman -S --needed --noconfirm "${packages[@]}"
+    sudo emerge --ask  "${packages[@]}"
 }
 
 check_deps() {
@@ -117,7 +117,7 @@ check_deps() {
     (( ${#missing[@]} == 0 )) && return 0
 
     log_warn "Missing dependencies detected: ${missing[*]}"
-    log_info "Attempting to install via pacman..."
+    log_info "Attempting to install via emerge..."
 
     if ! install_packages "${missing[@]}"; then
         log_err "Failed to install required dependencies. Aborting."
