@@ -85,7 +85,7 @@ i use a bare git repository method to drop files exactly where they belong in yo
 make sure your connected to the internet and git is installed, 
 
 ```
-sudo pacman -Syu --needed git
+emerge --ask --verbose dev-vcs/git
 ```
 
 
