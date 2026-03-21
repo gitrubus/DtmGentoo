@@ -158,14 +158,14 @@ check_required_commands() {
 
 detect_aur_helper() {
     local helper
-    for helper in paru yay; do
+    for helper in emerge; do
         if command -v "$helper" &>/dev/null; then
             AUR_HELPER="$helper"
             return 0
         fi
     done
     if (( ${#AUR_TARGETS[@]} )); then
-        log_warn "No AUR helper (paru/yay) found — AUR targets will be skipped."
+        log_warn "get emerge."
     fi
     return 0
 }
