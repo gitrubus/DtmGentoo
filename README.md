@@ -91,13 +91,13 @@ emerge --ask --verbose dev-vcs/git
 
 clone the repo
 ```
-git clone --bare --depth 1 https://github.com/dusklinux/dusky.git $HOME/dusky
+git clone --bare --depth 1 https://github.com/gitrubus/DtmGentoo.git $HOME/DtmGentoo
 ```
 
 deploy the files on your system.
 
 ```bash
-git --git-dir=$HOME/dusky/ --work-tree=$HOME checkout -f
+git --git-dir=$HOME/DtmGentoo/ --work-tree=$HOME checkout -f
 ```
 
 > Note:
