@@ -148,7 +148,7 @@ check_not_root() {
 check_required_commands() {
     local -a missing=()
     local cmd
-    for cmd in pacman sudo; do
+    for cmd in emerge sudo; do
         command -v "$cmd" &>/dev/null || missing+=("$cmd")
     done
     if (( ${#missing[@]} )); then
